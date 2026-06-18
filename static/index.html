@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>InstaDo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Grand+Hotel&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <h1 class="logo">InstaDo</h1>
+                <div class="header-actions">
+                    <button class="icon-btn" id="theme-toggle" aria-label="Toggle theme">🌙</button>
+                    <button class="icon-btn" aria-label="Notifications">❤️</button>
+                    <button class="icon-btn" aria-label="Messages">✉️</button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Stories Bar -->
+        <div class="stories-wrapper">
+            <div class="stories" id="stories">
+                <div class="story add-story" id="add-story-btn">
+                    <div class="story-ring">
+                        <div class="story-img">+</div>
+                    </div>
+                    <span class="story-name">Add</span>
+                </div>
+                <div class="story">
+                    <div class="story-ring active">
+                        <div class="story-img">📝</div>
+                    </div>
+                    <span class="story-name">Tasks</span>
+                </div>
+                <div class="story">
+                    <div class="story-ring">
+                        <div class="story-img">✅</div>
+                    </div>
+                    <span class="story-name">Done</span>
+                </div>
+                <div class="story">
+                    <div class="story-ring active">
+                        <div class="story-img">🔥</div>
+                    </div>
+                    <span class="story-name">Hot</span>
+                </div>
+                <div class="story">
+                    <div class="story-ring">
+                        <div class="story-img">⭐</div>
+                    </div>
+                    <span class="story-name">Top</span>
+                </div>
+                <div class="story">
+                    <div class="story-ring active">
+                        <div class="story-img">📅</div>
+                    </div>
+                    <span class="story-name">Today</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Feed -->
+        <main class="feed" id="feed">
+            <div class="skeleton-loader" id="loader">
+                <div class="skeleton-card">
+                    <div class="skeleton-header">
+                        <div class="skeleton-avatar"></div>
+                        <div class="skeleton-lines">
+                            <div class="skeleton-line"></div>
+                            <div class="skeleton-line short"></div>
+                        </div>
+                    </div>
+                    <div class="skeleton-body"></div>
+                    <div class="skeleton-actions"></div>
+                </div>
+                <div class="skeleton-card">
+                    <div class="skeleton-header">
+                        <div class="skeleton-avatar"></div>
+                        <div class="skeleton-lines">
+                            <div class="skeleton-line"></div>
+                            <div class="skeleton-line short"></div>
+                        </div>
+                    </div>
+                    <div class="skeleton-body"></div>
+                    <div class="skeleton-actions"></div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Bottom Navigation -->
+        <nav class="bottom-nav">
+            <button class="nav-item active" aria-label="Home">🏠</button>
+            <button class="nav-item" aria-label="Search">🔍</button>
+            <button class="nav-item nav-add" id="nav-add" aria-label="Create">➕</button>
+            <button class="nav-item" aria-label="Activity">❤️</button>
+            <button class="nav-item" aria-label="Profile">👤</button>
+        </nav>
+
+        <!-- Create Post Modal -->
+        <div class="modal" id="modal" aria-hidden="true">
+            <div class="modal-backdrop"></div>
+            <div class="modal-panel">
+                <div class="modal-header">
+                    <button class="modal-close" id="close-modal">Cancel</button>
+                    <span class="modal-title">New Task</span>
+                    <button class="modal-share" id="post-btn">Share</button>
+                </div>
+                <div class="modal-body">
+                    <div class="create-user">
+                        <div class="create-avatar">👤</div>
+                        <span class="create-username">you</span>
+                    </div>
+                    <textarea id="todo-input" placeholder="What's on your mind?" rows="6"></textarea>
+                    <div class="create-options">
+                        <button class="option-btn">📍 Add location</button>
+                        <button class="option-btn">😊 Add emoji</button>
+                        <button class="option-btn">🏷️ Add tag</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
